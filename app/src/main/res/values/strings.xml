@@ -1,0 +1,5 @@
+<resources>
+    <string name="random_button_title">Randomize!</string>
+    <string name="text_field_hint">Enter the list separated by line breaks</string>
+    <string name="app_name">Randomizer</string>
+</resources>
