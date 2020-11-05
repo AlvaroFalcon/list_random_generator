@@ -2,6 +2,8 @@ package com.frostfel.listrandomizer.activities
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -19,6 +21,21 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         if(intent.action == Intent.ACTION_SEND && intent.hasExtra(Intent.EXTRA_TEXT)){
             viewModel.setTextFromExtra(intent, randomize_items_text_field)
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_activity_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.clear_list -> {
+                viewModel.clearList()
+                randomize_items_text_field.setText("")
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     override fun onClick(v: View) {

@@ -6,7 +6,7 @@ class WordProcessor {
             if(text == null) return listOf()
             if(text.isEmpty()) return listOf()
             if(!text.contains(delimiter)) return listOf(text)
-            return text.split(delimiter)
+            return text.trim().split(delimiter)
         }
     }
 }

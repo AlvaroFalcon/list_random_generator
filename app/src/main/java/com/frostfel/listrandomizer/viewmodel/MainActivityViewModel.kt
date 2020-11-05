@@ -18,7 +18,15 @@ class MainActivityViewModel : ViewModel() {
     }
 
     fun getRandomItemFromList(): String {
-        return wordList.random()
+        return if(wordList.isNotEmpty()){
+            wordList.random()
+        }else{
+            ""
+        }
+    }
+
+    fun clearList() {
+        wordList = listOf()
     }
 
 }
