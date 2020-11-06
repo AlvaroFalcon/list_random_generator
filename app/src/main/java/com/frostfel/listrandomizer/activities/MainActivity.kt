@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setSupportActionBar(toolbar)
         randomize_btn.setOnClickListener(this)
         if(intent.action == Intent.ACTION_SEND && intent.hasExtra(Intent.EXTRA_TEXT)){
             viewModel.setTextFromExtra(intent, randomize_items_text_field)

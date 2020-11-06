@@ -4,61 +4,79 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="14dp"
     android:background="?attr/background_color"
     tools:context=".activities.MainActivity">
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:padding="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/color_primary"
+        app:title="@string/app_name"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/guideline"
-        android:background="?attr/editTextBackgroundColor"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:padding="14dp"
         >
-        <EditText
-            android:id="@+id/randomize_items_text_field"
-            android:hint="@string/text_field_hint"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:inputType="textMultiLine"
+            app:layout_constraintTop_toTopOf="parent"
+            android:padding="4dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:gravity="top"
-            android:background="@null"
+            app:layout_constraintBottom_toTopOf="@id/guideline"
+            android:background="?attr/editTextBackgroundColor"
+            >
+            <EditText
+                android:id="@+id/randomize_items_text_field"
+                android:hint="@string/text_field_hint"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:inputType="textMultiLine"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:gravity="top"
+                android:background="@null"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:padding="14dp"
+            android:id="@+id/result_text"
+            android:layout_width="0dp"
+            android:textSize="18sp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textStyle="bold"
+            android:gravity="start"
             />
+        <Button
+            android:id="@+id/randomize_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/random_button_title"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <TextView
-        android:padding="14dp"
-        android:id="@+id/result_text"
-        android:layout_width="0dp"
-        android:textSize="18sp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/guideline"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:textStyle="bold"
-        android:gravity="start"
-        />
-    <Button
-        android:id="@+id/randomize_btn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/random_button_title"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
