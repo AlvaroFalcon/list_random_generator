@@ -8,15 +8,12 @@
         <!-- Secondary brand color. -->
         <item name="background_color">@color/white</item>
         <item name="editTextBackgroundColor">@color/color_primary_light</item>
+        <item name="toolbarColor">@color/color_primary</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
         <item name="android:actionMenuTextColor">@color/black</item>
-        <item name="android:toolbarStyle">@style/Theme.ListRandomizer.ToolbarTheme</item>
     </style>
 
-    <style name="Theme.ListRandomizer.ToolbarTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <item name="titleTextColor">@color/black</item>
-    </style>
 
 </resources>

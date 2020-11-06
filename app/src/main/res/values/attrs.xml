@@ -2,4 +2,5 @@
 <resources>
     <attr name="background_color"/>
     <attr name="editTextBackgroundColor"/>
+    <attr name="toolbarColor"/>
 </resources>
